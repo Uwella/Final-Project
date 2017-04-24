@@ -1,4 +1,4 @@
-//window.onload = function() {
+window.onload = function() {
       function initMap() {
         var myCenter = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById("map"), {
@@ -13,7 +13,7 @@
         	geocodeLatLng(geocoder, map, infowindow);
 		});
       }//end of initMap
-	//};//end of window.onlaod
+	};//end of window.onlaod
 
 function geocodeLatLng(geocoder, map, infowindow){
 	geocoder.geocode(
