@@ -24,13 +24,17 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 		{'location': latlng},
 		function(results, status){
 			if(status === 'OK') {
-				if(results[7]){
+
+				last = results.slice(-1).pop();
+				country = last.formatted_address;
+
+				if(country){
 					map.setZoom(11);
 					var marker = new google.maps.Marker({
 						position: latlng,
 						map: map
 					});
-					infowindow.setContent(results[7].formatted_address);
+					infowindow.setContent(country);
 					infowindow.open(map, marker);
 				}
 				else{
