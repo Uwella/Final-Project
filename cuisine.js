@@ -12,7 +12,7 @@
         	lat=event.latLng.lat();
         	lng=event.latLng.lng();
 
-        	var latlng = (lat: lat, lng: lng);
+        	var latlng = {lat: lat, lng: lng};
 
         	geocodeLatLng(geocoder, map, infowindow, latlng);
 		});
