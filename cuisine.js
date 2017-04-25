@@ -23,7 +23,7 @@ function geocodeLatLng(geocoder, map, infowindow){
 				if(results[7]){
 					map.setZoom(11);
 					var marker = new google.maps.Marker({
-						position: event.latLng;
+						position: event.latLng,
 						map: map
 					});
 					infowindow.setContent(results[7].formatted_address);

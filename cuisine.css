@@ -8,3 +8,8 @@ body{
 	height: 400px;
     width: 100%;
 }
+
+h3{
+	padding: 2pt;
+	margin: 2pt;
+}
