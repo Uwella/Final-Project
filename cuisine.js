@@ -27,9 +27,10 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 				last = results.slice(-1).pop();
 				country = last.formatted_address;
+				console.log(last);
 
 				if(country){
-				
+					map.setZoom(11);
 					var marker = new google.maps.Marker({
 						position: latlng,
 						map: map
