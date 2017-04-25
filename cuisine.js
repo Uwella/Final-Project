@@ -9,20 +9,25 @@
         var infowindow = new google.maps.InfoWindow;
 
         google.maps.event.addListener(map, 'click', function(event){
-        	geocodeLatLng(geocoder, map, infowindow);
+        	lat=event.latLng.lat();
+        	lng=event.latLng.lng();
+
+        	var latlng = (lat: lat, lng: lng);
+
+        	geocodeLatLng(geocoder, map, infowindow, latlng);
 		});
       }//end of initMap
 	
 
-function geocodeLatLng(geocoder, map, infowindow){
+function geocodeLatLng(geocoder, map, infowindow, latlng){
 	geocoder.geocode(
-		{'latLng': event.latLng},
+		{'location': latlng},
 		function(results, status){
 			if(status === 'OK') {
 				if(results[7]){
 					map.setZoom(11);
 					var marker = new google.maps.Marker({
-						position: event.latLng,
+						position: latlng,
 						map: map
 					});
 					infowindow.setContent(results[7].formatted_address);
