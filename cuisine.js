@@ -34,8 +34,6 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 				if(country){
 
-					markers = [];
-
 					var marker = new google.maps.Marker({
 					position: latlng,
 					map: map
@@ -45,6 +43,8 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 					infowindow.open(map, marker);
 
 					markers.push(marker);
+					markers = [];
+					
 				}
 				else{
 					window.alert('No results found');
