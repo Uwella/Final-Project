@@ -34,9 +34,6 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 				if(country){
 
-					infowindow.setContent(country);
-					infowindow.open(map, marker);
-
 					addMarker(latlng);
 				}
 				else{
@@ -51,15 +48,18 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 function addMarker(latlng){
 
+	markers = [];
+
 	var marker = new google.maps.Marker({
 			position: latlng,
 			map: map
 		});
 	markers.push(marker);
-	setMapOnAll(map);
+	infowindow.setContent(country);
+	infowindow.open(map, marker);
   }
 
-function setMapOnAll(map) {
+/*function setMapOnAll(map) {
         for (var i = 0; i < markers.length; i++) {
           markers[i].setMap(map);
         }
@@ -72,4 +72,4 @@ function clearMarkers() {
 function deleteMarkers() {
      clearMarkers();
      markers = [];
-   }     
+   }  */   
