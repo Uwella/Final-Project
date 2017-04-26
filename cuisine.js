@@ -55,7 +55,10 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 					window.alert('No results found');
 				}
 
-				function clearMarkers() {
+			else{
+				window.alert('Geocoder failed due to: ' + status);
+			}
+		  function clearMarkers() {
         		setMapOnAll(null);
       			}
 
@@ -63,10 +66,7 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 		        clearMarkers();
 		        markers = [];
       			}	
-			}	
-			else{
-				window.alert('Geocoder failed due to: ' + status);
-			}
+			}		
 		});
 	}//end of geocodeLatLng function
 
