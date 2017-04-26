@@ -50,7 +50,6 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 	}//end of geocodeLatLng function
 
 function addMarker(latlng){
-	clearMarkers();
 
 	var marker = new google.maps.Marker({
 			position: latlng,
