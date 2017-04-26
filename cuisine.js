@@ -27,15 +27,6 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 		{'location': latlng},
 		function(results, status){
 
-			function clearMarkers() {
-        		setMapOnAll(null);
-      		}
-
-      		function deleteMarkers() {
-		        clearMarkers();
-		        markers = [];
-      		}
-
 			if(status === 'OK') {
 
 				last = results.slice(-1).pop();
@@ -63,6 +54,15 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 				else{
 					window.alert('No results found');
 				}
+
+				function clearMarkers() {
+        		setMapOnAll(null);
+      			}
+
+      			function deleteMarkers() {
+		        clearMarkers();
+		        markers = [];
+      			}	
 			}	
 			else{
 				window.alert('Geocoder failed due to: ' + status);
