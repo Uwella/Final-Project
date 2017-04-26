@@ -1,6 +1,9 @@
+      var map;
+      var markers =[];
+
       function initMap() {
         var myCenter = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById("map"), {
+        map = new google.maps.Map(document.getElementById("map"), {
           zoom: 6,
           center: myCenter
         });
@@ -30,11 +33,9 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 				console.log(last);
 
 				if(country){
-					
-					var marker = new google.maps.Marker({
-						position: latlng,
-						map: map
-					});
+
+					addMarker(latlng);
+
 					infowindow.setContent(country);
 					infowindow.open(map, marker);
 				}
@@ -47,3 +48,13 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 			}
 		});
 	}//end of geocodeLatLng function
+
+function addMarker(latlng){
+	clearMarkers();
+
+	var marker = new google.maps.Marker({
+			position: latlng,
+			map: map
+		});
+	markers.push(marker);
+}
