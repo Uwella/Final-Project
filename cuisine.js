@@ -26,6 +26,16 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 	geocoder.geocode(
 		{'location': latlng},
 		function(results, status){
+
+			function clearMarkers() {
+        		setMapOnAll(null);
+      		}
+
+      		function deleteMarkers() {
+		        clearMarkers();
+		        markers = [];
+      		}
+
 			if(status === 'OK') {
 
 				last = results.slice(-1).pop();
@@ -43,8 +53,12 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 					infowindow.open(map, marker);
 
 					markers.push(marker);
-					markers = [];
 					
+					function setMapOnAll(map) {
+        				for (var i = 0; i < markers.length; i++) {
+         				markers[i].setMap(map);
+        				}
+      				}
 				}
 				else{
 					window.alert('No results found');
