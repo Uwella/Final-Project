@@ -34,10 +34,10 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 				if(country){
 
-					addMarker(latlng);
-
 					infowindow.setContent(country);
 					infowindow.open(map, marker);
+
+					addMarker(latlng);
 				}
 				else{
 					window.alert('No results found');
@@ -56,6 +56,7 @@ function addMarker(latlng){
 			map: map
 		});
 	markers.push(marker);
+	setMapOnAll(map);
   }
 
 function setMapOnAll(map) {
