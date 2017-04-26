@@ -54,19 +54,19 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 				else{
 					window.alert('No results found');
 				}
-
+			}	
 			else{
 				window.alert('Geocoder failed due to: ' + status);
 			}
-		  function clearMarkers() {
+		  	function clearMarkers() {
         		setMapOnAll(null);
       			}
 
-      			function deleteMarkers() {
+      		function deleteMarkers() {
 		        clearMarkers();
 		        markers = [];
       			}	
-			}		
+					
 		});
 	}//end of geocodeLatLng function
 
