@@ -48,8 +48,6 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 function addMarker(latlng){
 
-	markers = [];
-
 	var marker = new google.maps.Marker({
 			position: latlng,
 			map: map
