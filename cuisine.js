@@ -52,9 +52,10 @@ function addMarker(latlng){
 			position: latlng,
 			map: map
 		});
-	markers.push(marker);
 	infowindow.setContent(country);
 	infowindow.open(map, marker);
+
+	markers.push(marker);
   }
 
 /*function setMapOnAll(map) {
