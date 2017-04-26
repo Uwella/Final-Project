@@ -34,7 +34,17 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 				if(country){
 
-					addMarker(latlng);
+					markers = [];
+
+					var marker = new google.maps.Marker({
+					position: latlng,
+					map: map
+					});
+
+					infowindow.setContent(country);
+					infowindow.open(map, marker);
+
+					markers.push(marker);
 				}
 				else{
 					window.alert('No results found');
@@ -46,7 +56,7 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 		});
 	}//end of geocodeLatLng function
 
-function addMarker(latlng){
+/*function addMarker(latlng){
 
 	var marker = new google.maps.Marker({
 			position: latlng,
@@ -56,7 +66,7 @@ function addMarker(latlng){
 	infowindow.open(map, marker);
 
 	markers.push(marker);
-  }
+  }*/
 
 /*function setMapOnAll(map) {
         for (var i = 0; i < markers.length; i++) {
