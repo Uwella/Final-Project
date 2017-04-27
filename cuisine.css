@@ -10,10 +10,15 @@ body{
 }
 
 h3{
-	margin-right: auto;
-	margin-left: auto;
-	padding: 2pt;
-	margin: 2pt;
+	text-align: center;
+	padding: 20pt;
+	margin: 20pt;
+}
+
+input{
+	padding-top: 5pt;
+	padding-bottom: 5pt;
+	margin: 5pt;
 }
 
 
