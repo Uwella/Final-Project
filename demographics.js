@@ -71,29 +71,7 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 		});
 	}//end of geocodeLatLng function
 
-/*function addMarker(latlng){
+function callWorldBank(two_letter){
+	
 
-	var marker = new google.maps.Marker({
-			position: latlng,
-			map: map
-		});
-	infowindow.setContent(country);
-	infowindow.open(map, marker);
-
-	markers.push(marker);
-  }*/
-
-/*function setMapOnAll(map) {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(map);
-        }
-    }
-
-function clearMarkers() {
-      setMapOnAll(null);
-     }
-
-function deleteMarkers() {
-     clearMarkers();
-     markers = [];
-   }  */   
+}
