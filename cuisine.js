@@ -31,7 +31,8 @@ function geocodeLatLng(geocoder, map, infowindow, latlng){
 
 				last = results.slice(-1).pop();
 				country = last.formatted_address;
-				console.log(last);
+				two_letter = last.address_components[0].short_name;
+				console.log(two_letter);
 
 				if(country){
 
